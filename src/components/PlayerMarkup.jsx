@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
-const Player = ({ player="abdullah", symbol="O",active }) => {
+const Player = ({ player="abdullah", symbol="O",active,onChangeName }) => {
 const [isEditing,setIsEditing]=useState(false)
 const [name,setName]=useState(player)
-
+function handleEditing(){
+  setIsEditing(prev=>!prev)
+ isEditing? onChangeName(symbol,name):''
+}
   return (
     <li className={active?'active':''} >
       <span className="player">
@@ -12,7 +15,7 @@ const [name,setName]=useState(player)
         <span className="player-symbol">{symbol}</span>
       </span>
      
-      <button onClick={()=>setIsEditing(prev=>!prev)}>{isEditing?'done':'edit'}</button>
+      <button onClick={handleEditing}>{isEditing?'done':'edit'}</button>
     </li>
   );
 };

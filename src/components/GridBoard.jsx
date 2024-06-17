@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-const initial = [
-  [null, null, null],
-  [null, null, null],
-  [null, null, null],
-];
-const GridBoard = ({ onSquareChange,turns }) => {
-let gameBoard=initial;
-for (let turn of turns){
-const {square,player}=turn
-const {row,col}=square
-gameBoard[row][col]=player
+// const initial = [
+//   [null, null, null],
+//   [null, null, null],
+//   [null, null, null],
+// ];
+const GridBoard = ({ onSquareChange,board }) => {
+// let gameBoard=initial;
+// for (let turn of turns){
+// const {square,player}=turn
+// const {row,col}=square
+// gameBoard[row][col]=player
 
-}
+// }
 
   // const [gameBoard, setGameBoard] = useState(initial);
   // function handleBoardChange(rowInd, colInd) {
@@ -24,7 +24,7 @@ gameBoard[row][col]=player
   // }
   return (
     <ol id="game-board">
-      {gameBoard.map((row, rowIndex) => (
+      {board.map((row, rowIndex) => (
         <li key={rowIndex}>
           <ol>
             {row.map((symbol, colIndex) => (

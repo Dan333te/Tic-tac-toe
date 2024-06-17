@@ -1,5 +1,5 @@
 import React from 'react'
-import ticTacImg from"../../public/game-logo.png"
+import ticTacImg from"/game-logo.png"
 const PageTitle = () => {
   return (
     <header>
